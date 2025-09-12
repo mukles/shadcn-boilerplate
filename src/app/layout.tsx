@@ -1,4 +1,4 @@
-import Footer from "@/components/fotter";
+import Footer from "@/components/footer";
 import NavigationMenuBar from "@/components/navigation";
 import TwSizeIndicator from "@/components/tw-size-indicator";
 import type { Metadata } from "next";
