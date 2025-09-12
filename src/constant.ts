@@ -24,3 +24,7 @@ export const TAGS = {
   homepage: "homepage",
   search: "search",
 } as const;
+
+export const REVALIDATION_SECRET = process.env.REVALIDATION_SECRET;
+export const API_BASE_URL =
+  process.env.API_BASE_URL || "http://localhost:4000/api";

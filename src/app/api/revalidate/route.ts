@@ -1,8 +1,7 @@
-// app/api/revalidate/route.ts
-import { CONTENT_WEBHOOKS, TAGS } from "@/constant";
+import { CONTENT_WEBHOOKS, REVALIDATION_SECRET, TAGS } from "@/constant";
 
 export async function POST(req: NextRequest): Promise<NextResponse> {
-  return revalidate(req);
+  return handleRevalidate(req);
 }
 
 // lib/custom-revalidation.ts
@@ -10,12 +9,16 @@ import { revalidatePath, revalidateTag } from "next/cache";
 import { headers } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function revalidate(req: NextRequest): Promise<NextResponse> {
+export async function handleRevalidate(
+  req: NextRequest,
+): Promise<NextResponse> {
+  console.log({ message: "Revalidation function called" });
   // We always need to respond with a 200 status code to your backend,
   // otherwise it might continue to retry the request.
 
   const headersList = await headers();
-  const topic = headersList.get("x-content-topic") || "unknown";
+  const topic = headersList.get("x-content-event") || "unknown";
+  console.log({ topic });
   const contentType = headersList.get("x-content-type") || "";
   const contentId = headersList.get("x-content-id") || "";
   const secret = req.nextUrl.searchParams.get("secret");
@@ -23,7 +26,7 @@ export async function revalidate(req: NextRequest): Promise<NextResponse> {
   console.log("Revalidation request:", { topic, contentType, contentId });
 
   // Validate secret
-  if (!secret || secret !== process.env.CUSTOM_REVALIDATION_SECRET) {
+  if (!secret || secret !== REVALIDATION_SECRET) {
     console.error("Invalid revalidation secret.");
     return NextResponse.json({ status: 401, error: "Unauthorized" });
   }
