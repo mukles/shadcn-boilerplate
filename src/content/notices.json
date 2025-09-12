@@ -1,0 +1,23 @@
+{
+  "enable": true,
+  "title": "Notices",
+  "description": "Stay up to date with the latest official Notices, press releases, and media coverage from BAPUS.",
+  "notices": [
+    {
+      "title": "News Header",
+      "description": "Figma ipsum component variant main layer. Auto variant italic bold device figiam selection strikethrough."
+    },
+    {
+      "title": "System Maintenance Notice",
+      "description": "Scheduled maintenance window for server upgrades and security patches. Expected downtime: 2-4 hours."
+    },
+    {
+      "title": "Policy Update Announcement",
+      "description": "Important updates to company policies regarding remote work guidelines and expense reporting procedures."
+    },
+    {
+      "title": "Training Session Available",
+      "description": "New professional development opportunities now available. Register for upcoming workshops and certification programs."
+    }
+  ]
+}

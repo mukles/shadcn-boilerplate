@@ -1,0 +1,31 @@
+{
+  "enable": true,
+  "title": "Meeting Minutes",
+  "description": "Figma ipsum component variant main layer. Resizing line main blur flatten. Inspect undo create outline object clip bold opacity.",
+  "meetings": [
+    {
+      "title": "Meeting Minutes Title",
+      "description": "Figma ipsum component variant main layer. Auto variant italic bold device figiam selection strikethrough.",
+      "date": "8 Sep, 2020",
+      "time": "04:15 am"
+    },
+    {
+      "title": "Project Review Meeting",
+      "description": "Comprehensive review of Q3 deliverables and milestone achievements. Discussion of resource allocation and timeline adjustments.",
+      "date": "15 Sep, 2020",
+      "time": "02:30 pm"
+    },
+    {
+      "title": "Team Standup Notes",
+      "description": "Daily standup summary covering sprint progress, blockers identified, and action items for the development team.",
+      "date": "22 Sep, 2020",
+      "time": "09:00 am"
+    },
+    {
+      "title": "Client Feedback Session",
+      "description": "Key insights from client presentation and feedback incorporation strategy for upcoming iterations.",
+      "date": "29 Sep, 2020",
+      "time": "11:45 am"
+    }
+  ]
+}

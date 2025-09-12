@@ -34,3 +34,15 @@ export const iconMap: Record<string, ReactNode> = {
   Zap: React.createElement(Zap, { className: "size-5 shrink-0" }),
   Menu: React.createElement(Menu, { className: "size-5 shrink-0" }),
 };
+
+export interface MeetingMinute {
+  title: string;
+  description: string;
+  date: string;
+  time: string;
+}
+
+export interface Notice {
+  title: string;
+  description: string;
+}
