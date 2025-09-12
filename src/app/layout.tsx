@@ -1,3 +1,5 @@
+import Footer from "@/components/fotter";
+import NavigationMenuBar from "@/components/navigation";
 import TwSizeIndicator from "@/components/tw-size-indicator";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
@@ -29,7 +31,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <TwSizeIndicator />
+        <NavigationMenuBar />
         {children}
+        <Footer />
       </body>
     </html>
   );

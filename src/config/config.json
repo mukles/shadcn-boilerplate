@@ -1,0 +1,56 @@
+{
+  "site": {
+    "title": "shadcn boilerplate",
+    "base_url": "",
+    "base_path": "/",
+    "trailing_slash": false,
+    "favicon": "/images/favicon.png",
+    "logo": "",
+    "logo_darkmode": "",
+    "logo_width": "150",
+    "logo_height": "27",
+    "logo_text": "Shadcn boilerplate"
+  },
+
+  "settings": {
+    "search": true,
+    "sticky_header": true,
+    "theme_switcher": true,
+    "default_theme": "dark",
+    "pagination": 2,
+    "summary_length": 200,
+    "blog_folder": "blog",
+    "auth": {
+      "enabled": true,
+      "login": {
+        "title": "Login",
+        "url": "#"
+      },
+      "signup": {
+        "title": "Sign up",
+        "url": "#"
+      }
+    }
+  },
+
+  "params": {
+    "contact_form_action": "#",
+    "copyright": "Designed And Developed by mukles"
+  },
+
+  "navigation_button": {
+    "enable": true,
+    "label": "Get Started",
+    "link": "https://github.com/zeon-studio/nextplate"
+  },
+
+  "metadata": {
+    "meta_author": "mukles",
+    "meta_image": "/images/og-image.png",
+    "meta_description": "shadcn boilerplate"
+  },
+  "developer": {
+    "github": "https://github.com/mukles",
+    "name": "mukles"
+  }
+}
