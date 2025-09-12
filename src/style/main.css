@@ -3,6 +3,7 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@import "./variables.css";
 @import "./theme.css";
 @import "./utilities.css";
 

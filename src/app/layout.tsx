@@ -1,3 +1,4 @@
+import TwSizeIndicator from "@/components/tw-size-indicator";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../style/main.css";
@@ -27,6 +28,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <TwSizeIndicator />
         {children}
       </body>
     </html>
