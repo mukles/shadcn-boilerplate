@@ -17,12 +17,6 @@ export const CONTENT_WEBHOOKS = {
 export const TAGS = {
   notices: "notices",
   meetingMinutes: "meeting-minutes",
-  content: "content",
-  dashboard: "dashboard",
-  stats: "stats",
-  users: "users",
-  homepage: "homepage",
-  search: "search",
 } as const;
 
 export const REVALIDATION_SECRET = process.env.REVALIDATION_SECRET;

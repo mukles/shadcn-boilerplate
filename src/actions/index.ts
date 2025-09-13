@@ -1,3 +1,3 @@
 export * from "./meeting-minutes";
 export * from "./notice";
-export * from "./utiles";
+export * from "./utility";

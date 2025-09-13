@@ -1,6 +1,6 @@
 "use server";
 
-import { API_BASE_URL, TAGS } from "@/constant";
+import { API_BASE_URL } from "@/constant";
 type ApiSuccess<T> = {
   status: number;
   message: string;
@@ -23,7 +23,6 @@ export type ExtractVariables<T> = T extends { variables: object }
 
 export async function fetchApi<T>({
   endPoint,
-  cache = "reload",
   headers = {},
   body,
   method = "GET",
@@ -41,11 +40,7 @@ export async function fetchApi<T>({
       headers: isFormData
         ? headers // Don't set Content-Type for FormData
         : { "Content-Type": "application/json", ...headers },
-      cache,
       body: body ? (isFormData ? body : JSON.stringify(body)) : undefined,
-      next: {
-        tags: [TAGS.notices],
-      },
     });
 
     const json = await response.json();
