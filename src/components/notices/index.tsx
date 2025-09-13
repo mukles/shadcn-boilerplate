@@ -14,8 +14,6 @@ export default async function NoticeSection() {
     );
   }
 
-  const { result: notices } = noticeData;
-
   return (
     <section className="section">
       <div className="container">
@@ -27,7 +25,7 @@ export default async function NoticeSection() {
         </div>
 
         {/* @ts-ignore */}
-        <Slider data={notices} />
+        <Slider data={noticeData.result.notices} />
       </div>
     </section>
   );
