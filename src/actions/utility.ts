@@ -28,9 +28,8 @@ export async function fetchApi<T>({
   method = "GET",
 }: {
   endPoint: string;
-  cache?: RequestCache;
   headers?: HeadersInit;
-  body?: ExtractVariables<T> | FormData;
+  body?: ExtractVariables<T>;
   method?: HttpMethod;
 }): Promise<ApiResponse<T>> {
   try {

@@ -52,8 +52,6 @@ export async function handleRevalidate(
     // Handle Notice updates
     if (isNoticeUpdate) {
       revalidateTag(TAGS.notices);
-      revalidateTag(TAGS.content);
-      revalidated.tags.push(TAGS.notices, TAGS.content);
 
       // If specific notice ID provided, revalidate that too
       if (contentId) {
@@ -67,9 +65,7 @@ export async function handleRevalidate(
 
       // If it's a publish/unpublish event, also revalidate homepage
       if (topic.includes("publish")) {
-        revalidateTag(TAGS.homepage);
         revalidatePath("/");
-        revalidated.tags.push(TAGS.homepage);
         if (!revalidated.paths.includes("/")) {
           revalidated.paths.push("/");
         }
@@ -79,8 +75,6 @@ export async function handleRevalidate(
     // Handle Meeting Minutes updates
     if (isMeetingMinuteUpdate) {
       revalidateTag(TAGS.meetingMinutes);
-      revalidateTag(TAGS.content);
-      revalidated.tags.push(TAGS.meetingMinutes, TAGS.content);
 
       // If specific meeting minute ID provided
       if (contentId) {
@@ -95,8 +89,8 @@ export async function handleRevalidate(
 
     // Always revalidate search results when content changes
     if (isNoticeUpdate || isMeetingMinuteUpdate) {
-      revalidateTag(TAGS.search);
-      revalidated.tags.push(TAGS.search);
+      // revalidateTag(TAGS.search);
+      // revalidated.tags.push(TAGS.search);
     }
 
     console.log("Revalidation completed:", revalidated);

@@ -1,5 +1,3 @@
-import NoticeSection from "@/components/notices";
-
 export default async function Home() {
   return (
     <>
@@ -9,7 +7,7 @@ export default async function Home() {
           <p className="mt-4 text-lg">This is a sample home page content.</p>
         </div>
       </section>
-      <NoticeSection />
+      {/* <NoticeSection /> */}
     </>
   );
 }
