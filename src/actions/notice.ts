@@ -19,6 +19,15 @@ export async function getNotices() {
   });
 }
 
+export async function getSingleNotice(id: string) {
+  "use cache";
+  cacheTag(TAGS.notices, `notice-${id}`);
+  return await fetchApi<Notice>({
+    endPoint: `/notices/items/${id}`,
+    method: "GET",
+  });
+}
+
 export async function toggleEnableAction(prevState: any, noticeId: string) {
   try {
     if (!noticeId) {
@@ -70,6 +79,7 @@ export async function updateNotice(
       body: rest,
     });
     revalidateTag(TAGS.notices);
+    // revalidateTag(`notice-${noticeId}`);
   } catch (error) {
     console.log(error);
     return "Error updating notice";
@@ -97,6 +107,7 @@ export async function deleteNoticeAction(
       method: "DELETE",
     });
     revalidateTag(TAGS.notices);
+    // revalidateTag(`notice-${noticeId}`);
   } catch (error) {
     return "Error deleting notice";
   }

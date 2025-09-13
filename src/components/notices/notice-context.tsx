@@ -15,7 +15,10 @@ type NoticeAction =
   | { type: "DELETE_NOTICE"; payload: string };
 
 // Optimistic reducer
-function noticeReducer(state: NoticeData, action: NoticeAction): NoticeData {
+function noticeReducer(
+  state: Omit<NoticeData, "variables">,
+  action: NoticeAction,
+): Omit<NoticeData, "variables"> {
   switch (action.type) {
     case "TOGGLE_ENABLE":
       return { ...state, enable: !state.enable };
@@ -49,7 +52,9 @@ function noticeReducer(state: NoticeData, action: NoticeAction): NoticeData {
   }
 }
 
-type NoticeContextType = { noticePromise: Promise<NoticeData | undefined> };
+type NoticeContextType = {
+  noticePromise: Promise<Omit<NoticeData, "variables"> | undefined>;
+};
 
 const NoticeContext = createContext<NoticeContextType | undefined>(undefined);
 
@@ -58,7 +63,7 @@ export function NoticeProvider({
   noticePromise,
 }: {
   children: React.ReactNode;
-  noticePromise: Promise<NoticeData | undefined>;
+  noticePromise: Promise<Omit<NoticeData, "variables"> | undefined>;
 }) {
   return (
     <NoticeContext.Provider value={{ noticePromise }}>

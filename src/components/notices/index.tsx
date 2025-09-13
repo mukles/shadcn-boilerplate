@@ -14,7 +14,11 @@ export default async function NoticeSection() {
     );
   }
 
-  const { title, description, notices } = noticeData.result;
+  const { title, description, notices, enable } = noticeData.result;
+
+  if (!enable) {
+    return null;
+  }
 
   return (
     <section className="section">

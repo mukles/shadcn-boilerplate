@@ -1,5 +1,6 @@
 "use client";
 
+import { Notice } from "@/types";
 import Link from "next/link";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -9,11 +10,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { buttonVariants } from "./ui/button";
 
 interface SliderProps {
-  data: Array<{
-    title: string;
-    description: string;
-    image?: string;
-  }>;
+  data: Array<Omit<Notice, "variables">>;
 }
 
 export default function Slider({ data }: SliderProps) {
@@ -27,6 +24,7 @@ export default function Slider({ data }: SliderProps) {
           prevEl: ".notices-prev",
           nextEl: ".notices-next",
         }}
+        loop={true}
         pagination={{
           el: ".notices-pagination",
           clickable: true,
@@ -62,7 +60,7 @@ export default function Slider({ data }: SliderProps) {
               </p>
 
               <Link
-                href={`/notices/${index}`}
+                href={`/notices/${slide.id}`}
                 className={buttonVariants({ variant: "outline" })}
               >
                 View Details

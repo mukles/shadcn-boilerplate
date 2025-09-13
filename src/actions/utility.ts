@@ -31,7 +31,7 @@ export async function fetchApi<T>({
   headers?: HeadersInit;
   body?: ExtractVariables<T>;
   method?: HttpMethod;
-}): Promise<ApiResponse<T>> {
+}): Promise<ApiResponse<Omit<T, "variables">>> {
   try {
     const isFormData = body instanceof FormData;
     const response = await fetch(API_BASE_URL + endPoint, {

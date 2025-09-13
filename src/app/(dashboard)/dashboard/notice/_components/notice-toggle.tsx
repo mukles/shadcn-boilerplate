@@ -23,7 +23,11 @@ const noticeToggleButton = cva(
 export default function NoticeToggle() {
   const { toggleEnable, notices: noticeData } = useNotices();
 
-  const [message, formAction] = useActionState(toggleEnableAction, null);
+  const [message, formAction, isPending] = useActionState(
+    toggleEnableAction,
+    null,
+  );
+
   const toggle = formAction.bind(null, noticeData?.id!);
 
   return (
@@ -37,6 +41,7 @@ export default function NoticeToggle() {
         <Button
           variant="outline"
           className={noticeToggleButton({ enable: !!noticeData?.enable })}
+          disabled={isPending}
         >
           {noticeData?.enable ? (
             <Eye className="mr-2 h-4 w-4" />
