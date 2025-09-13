@@ -6,6 +6,10 @@ const nextConfig: NextConfig = {
       fullUrl: true,
     },
   },
+  experimental: {
+    inlineCss: true,
+    useCache: true,
+  },
 };
 
 export default nextConfig;

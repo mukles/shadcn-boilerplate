@@ -1,4 +1,4 @@
-import Logo from "../Logo";
+import Logo from "../logo";
 
 import config from "@/config/config.json";
 import menuConfig from "@/config/menu.json";
@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <section>
+    <section className="section">
       <div className="container">
         <footer>
           <div className="grid grid-cols-2 gap-8 lg:grid-cols-6">
@@ -31,7 +31,7 @@ export default function Footer() {
               </div>
             ))}
           </div>
-          <div className="text-muted-foreground mt-24 flex flex-col justify-between gap-4 border-t pt-8 text-sm font-medium md:flex-row md:items-center">
+          <div className="text-muted-foreground border-border mt-24 flex flex-col justify-between gap-4 border-t pt-8 text-sm font-medium md:flex-row md:items-center">
             <p>{config.params.copyright}</p>
             <ul className="flex gap-4">
               {menuConfig.bottomLinks.map((link, linkIdx) => (

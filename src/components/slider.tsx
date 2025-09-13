@@ -1,13 +1,22 @@
 "use client";
 
-import { Notice } from "@/types";
+import Link from "next/link";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { buttonVariants } from "./ui/button";
 
-export default function NoticesSlider({ notices }: { notices: Notice[] }) {
+interface SliderProps {
+  data: Array<{
+    title: string;
+    description: string;
+    image?: string;
+  }>;
+}
+
+export default function Slider({ data }: SliderProps) {
   return (
     <div className="relative">
       <Swiper
@@ -39,21 +48,25 @@ export default function NoticesSlider({ notices }: { notices: Notice[] }) {
         }}
         className="notices-swiper"
       >
-        {notices.map((slide, index) => (
+        {data.map((slide, index) => (
           <SwiperSlide key={index}>
-            <div className="flex h-full flex-col rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-shadow duration-200 hover:shadow-md">
+            <div className="border-border bg-card flex h-full flex-col rounded-lg border p-6 shadow-sm transition-shadow duration-200 hover:shadow-md">
               <div className="mb-4 flex items-start gap-3">
-                <div className="h-8 w-8 flex-shrink-0 rounded bg-gray-400"></div>
-                <h3 className="text-lg font-semibold text-gray-900">
+                <div className="bg-accent h-8 w-8 flex-shrink-0 rounded"></div>
+                <h3 className="text-card-foreground text-lg font-semibold">
                   {slide.title}
                 </h3>
               </div>
-              <p className="mb-6 flex-grow text-sm leading-relaxed text-gray-600">
+              <p className="text-muted-foreground-foreground mb-6 flex-grow text-sm leading-relaxed">
                 {slide.title}
               </p>
-              <button className="self-start rounded border border-gray-300 px-4 py-2 text-sm text-gray-700 transition-colors duration-200 hover:bg-gray-50">
+
+              <Link
+                href={`/notices/${index}`}
+                className={buttonVariants({ variant: "outline" })}
+              >
                 View Details
-              </button>
+              </Link>
             </div>
           </SwiperSlide>
         ))}

@@ -1,7 +1,7 @@
 import menuConfig from "@/config/menu.json";
 import { iconMap, MenuItem } from "@/types";
 import Link from "next/link";
-import Logo from "../Logo";
+import Logo from "../logo";
 import {
   Accordion,
   AccordionContent,

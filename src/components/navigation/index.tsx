@@ -4,7 +4,7 @@ import menuConfig from "@/config/menu.json";
 import { MenuItem } from "@/types";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
-import Logo from "../Logo";
+import Logo from "../logo";
 import { Button, buttonVariants } from "../ui/button";
 import AuthenticationButton from "./authentication-button";
 import MobileNavigation from "./mobile-navigation";

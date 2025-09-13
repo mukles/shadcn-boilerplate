@@ -24,11 +24,11 @@
       "enabled": true,
       "login": {
         "title": "Login",
-        "url": "#"
+        "url": "/login"
       },
       "signup": {
         "title": "Sign up",
-        "url": "#"
+        "url": "/signup"
       }
     }
   },
