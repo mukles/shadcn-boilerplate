@@ -14,18 +14,17 @@ export default async function NoticeSection() {
     );
   }
 
+  const { title, description, notices } = noticeData.result;
+
   return (
     <section className="section">
       <div className="container">
         <div className="mb-8 text-center">
-          <h2 className="mb-4 text-3xl font-bold">Latest Notices</h2>
-          <p className="mx-auto max-w-2xl">
-            Stay updated with the latest news and announcements from our team.
-          </p>
+          <h2 className="mb-4 text-3xl font-bold">{title}</h2>
+          <p className="mx-auto max-w-2xl">{description}</p>
         </div>
 
-        {/* @ts-ignore */}
-        <Slider data={noticeData.result.notices} />
+        <Slider data={notices} />
       </div>
     </section>
   );
